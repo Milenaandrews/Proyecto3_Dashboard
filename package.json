@@ -1,0 +1,16 @@
+{
+  "name": "proyecto3__dashboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "fetch.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "moment": "^2.29.4"
+  }
+}
