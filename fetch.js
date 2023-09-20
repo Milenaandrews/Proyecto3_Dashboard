@@ -3,7 +3,8 @@ const fetchApi = async (url) => {
     if (response.status === 404 ){
         document.querySelector(".error").style.display = "block";
         document.querySelector(".weather").style.display = "none";
-        document.querySelector(".graphic").style.display = "none";
+        document.getElementById("grafico1").classList.add("hidden");
+        document.getElementById("grafico2").classList.add("hidden");
     } else{
         const data = await response.json()
         return data

@@ -1,4 +1,4 @@
-import moment from "./node_modules/moment/dist/moment.js";
+// import moment from "./node_modules/moment/dist/moment.js";
 import { fetchApi, fetchApiGrafico } from "./fetch.js";
 
 const searchbox = document.getElementById("inputCity");
@@ -18,7 +18,7 @@ async function checkWeather() {
     weatherIcon.src = `./assets/images/${data.weather[0].main}.png`
 
     document.querySelector(".weather").style.display = "block";
-    document.querySelector(".graphic").style.display = "block";
+    // document.querySelector(".graphic").style.display = "block";
     document.querySelector(".error").style.display = "none";
 }
 
@@ -40,11 +40,14 @@ async function mostrarGrafico() {
 
     
     const datos = dataGraficoArray.map((dato) => dato.list)
-    const fechas = datos[0].map((fecha) => moment(fecha.dt_txt).format('lll'))
+    const fechas = datos[0].map((fecha) => formatDate(fecha.dt_txt))
     const temperaturas = datos[0].map(temparatura => temparatura.main.temp)
     const humedades = datos[0].map(humedad => humedad.main.humidity)
     const nombreCiudad = dataGrafico.city.name
     
+    const contenedorGrafico1 = document.getElementById("grafico1")
+
+    contenedorGrafico1.classList.remove("hidden")
 
 
     let existingChart = Chart.getChart("myChart"); 
@@ -130,14 +133,19 @@ async function mostrarGrafico2() {
     const tempMinimas = datos[0].map(tempMinima =>tempMinima.main.temp_min)
     const nombreCiudad = dataGrafico.city.name
 
+        
+    const contenedorGrafico2 = document.getElementById("grafico2")
+
+    contenedorGrafico2.classList.remove("hidden")
 
 
-    // let existingChart2 = Chart.getChart("myChart2"); 
-    // if (existingChart2) {
-    //     existingChart2.destroy(); 
-    // }
+
+    let existingChart2 = Chart.getChart("myChart2"); 
+    if (existingChart2) {
+        existingChart2.destroy(); 
+    }
     
-    let ctx2 = document.getElementById("myChart2");
+    let ctx2 = document.getElementById("myChart2").getContext("2d");
 
     Chart.defaults.color = '#fff';
 
@@ -201,7 +209,19 @@ async function mostrarGrafico2() {
 
 
 
+function formatDate (fecha) {
+    const anio = fecha.slice(0,4)
+    const mesesCortos = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sept", "Oct", "Nov", "Dic"]
+    const mes = fecha.slice(5,7)
+    const dias = fecha.slice(8,10)
+    const hora = fecha.slice(11,16)
+    const mesPosition = parseInt(mes)-1
+    
+    const tradicional = `${dias} ${mesesCortos[mesPosition]} ${hora}`
+    
+    return tradicional
 
+}
 
 
 

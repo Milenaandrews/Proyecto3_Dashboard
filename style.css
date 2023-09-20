@@ -88,9 +88,9 @@ body{
     margin-top: -6px ;
 }
 
-/* .weather{
+.weather{
     display: none;
-} */
+}
 
 .error{
     text-align: left;
@@ -111,6 +111,9 @@ body{
     /* display: none; */
 }
 
+.hidden{
+        display: none;
+}
 .cajaGraficos{
     display: flex;
     justify-content: space-around;
