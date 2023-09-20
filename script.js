@@ -1,4 +1,4 @@
-import moment from "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js";
+import moment from "./node_modules/moment/dist/moment.js";
 import { fetchApi, fetchApiGrafico } from "./fetch.js";
 
 const searchbox = document.getElementById("inputCity");
