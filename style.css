@@ -107,6 +107,7 @@ body{
     border-radius: 20px;
     padding: 40px 35px;
     margin: 30px 30px 30px 30px;
+   
 
     /* display: none; */
 }
@@ -119,6 +120,23 @@ body{
     justify-content: space-around;
     flex-wrap: wrap;
     
+    
 }
+
+@media (max-width: 1100px) {
+    .cajaGraficos{
+        display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;   
+    }
+    .graphic{
+        max-width: 500px;
+    }
+
+
+}
+  
+
+
 
 

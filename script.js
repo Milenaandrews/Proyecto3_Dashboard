@@ -75,7 +75,7 @@ async function mostrarGrafico() {
                 label: 'Humedad',
                 data: humedades,
                 borderColor: 'rgb(255, 99, 132)',
-                backgroundColor: 'rgba(255, 99, 132, 0.7)'
+                backgroundColor: 'rgba(255, 99, 132, 0.8)'
             }
         ]
         },
@@ -128,7 +128,7 @@ async function mostrarGrafico2() {
     
     const datos = dataGraficoArray.map((dato) => dato.list)
     
-    const fechas = datos[0].map((fecha) => fecha.dt_txt)    
+    const fechas = datos[0].map((fecha) => formatDate(fecha.dt_txt))    
     const tempMaximas = datos[0].map(tempMaxima =>tempMaxima.main.temp_max)
     const tempMinimas = datos[0].map(tempMinima =>tempMinima.main.temp_min)
     const nombreCiudad = dataGrafico.city.name
@@ -154,18 +154,18 @@ async function mostrarGrafico2() {
         data: {
             labels: fechas,
             datasets: [ {
-                type: 'line',
-                label: 'Temperatura',
+                type: 'bar',
+                label: 'Temperatura Mínima',
                 data: tempMaximas,
-                fill: true,
-                borderColor: 'rgb(66, 54, 235)'
+                borderColor: 'rgb(255, 99, 132)',
+                backgroundColor: 'rgba(66, 54, 235, 0.8)'
             },
         {
                 type: 'bar',
-                label: 'Humedad',
+                label: 'Temperatura Mínima',
                 data: tempMinimas,
                 borderColor: 'rgb(255, 99, 132)',
-                backgroundColor: 'rgba(255, 99, 132, 0.7)'
+                backgroundColor: 'rgba(255, 99, 132, 0.8)'
             }
         ]
         },
@@ -179,7 +179,7 @@ async function mostrarGrafico2() {
                 
                 title: {
                     display: true,
-                    text: `Temperatura y Humedad de ${nombreCiudad} en 5 días`,
+                    text: `Temperatura Máxima y Mínima de ${nombreCiudad} en 5 días`,
                     padding: {
                         top: 20,
                         bottom: 30
@@ -225,12 +225,5 @@ function formatDate (fecha) {
 
 
 
-// const fecha = new Date('2023-09-19T21:00:00');
-// const opciones = { weekday: 'short', day: 'numeric', month: 'short', hour: 'numeric', minute: 'numeric'};
 
-// let fechaHoraActual = fecha.toLocaleString('es-ES', opciones);
-// fechaHoraActual = fechaHoraActual.replace(/,/g, '');
-
-
-// console.log(fechaHoraActual);
 
