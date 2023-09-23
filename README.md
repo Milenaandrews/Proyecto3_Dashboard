@@ -1,22 +1,16 @@
-# Crud para Plantilla inventario de bodega  
+# Better Days Weather App  
 
-Este es mi segundo proyecto
+Tercer proyecto Bootcamp
 
-Su funcion es llevar el inventario de productos de una bodega, pensado particularmente en el área que hoy me desenvuelvo.
+Esta app proporciona informacion sobre el clima, humedad y velocidad del viento en tiempo real.
+Además proporciona 2 gráficos con informacion de la temperatura y humedad diaria, y la temperatura máxima y mínima
+de 5 días cada 4 hrs
 
-La información se guarda en el Local Storage de la pagina.
-
-## Donde se podrá registrar:
-- Producto
-- Precio de venta
-- Stock
-- Fecha de ingreso
-
+Esta app es alimentada por API de openweather.
 
 ## Tecnologías
 
 - HTML
 - CSS
 - Java Script
-- Bootstrap
 - Git hub
