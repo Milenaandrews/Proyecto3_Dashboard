@@ -155,7 +155,7 @@ async function mostrarGrafico2() {
             labels: fechas,
             datasets: [ {
                 type: 'bar',
-                label: 'Temperatura Mínima',
+                label: 'Temperatura Máxima',
                 data: tempMaximas,
                 borderColor: 'rgb(255, 99, 132)',
                 backgroundColor: 'rgba(66, 54, 235, 0.8)'
@@ -208,6 +208,7 @@ async function mostrarGrafico2() {
 }
 
 
+// !Funcion para arreglar las fechas
 
 function formatDate (fecha) {
     const anio = fecha.slice(0,4)

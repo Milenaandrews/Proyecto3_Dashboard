@@ -123,14 +123,26 @@ body{
     
 }
 
-@media (max-width: 800px) {
+.logo{
+    width: 200px;
+    height: 180px;
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-left: 850px;
+
+}
+
+@media (max-width: 1000px) {
     
     .graphic{
-        max-width: 500px;
+        max-width: 100%;
         border-radius: 30px;
-
+        height: 500px;
     }
-
+    .canvas{
+     
+        box-sizing: none!important;
+    }
 
 }
   
